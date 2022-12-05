@@ -4,7 +4,7 @@ dotenv.config({ path: './.env' });
 
 export async function main() {
   await mongoose
-            .connect(`mongodb+srv://${process.env.MONGODB}@test-apis.chorlw4.mongodb.net/pikante?retryWrites=true&w=majority`, {
+            .connect(`mongodb+srv://${process.env.MONGODB}@test-apis.chorlw4.mongodb.net/${process.env.MONGODB_DATANAME}?retryWrites=true&w=majority`, {
             useNewUrlParser: true
             })
             .then(console.log('Connected to database'))
